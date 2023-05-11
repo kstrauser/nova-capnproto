@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<syntax name="capnp">
+    <meta>
+        <name>Cap'n Proto</name>
+        <type>structured</type>
+        <preferred-file-extension>capnp</preferred-file-extension>
+    </meta>
+    
+    <detectors>
+        <extension priority="1.0">capnp</extension>
+    </detectors>
+    
+    <indentation>
+        <increase>
+            <expression></expression>
+        </increase>
+        <decrease>
+            <expression></expression>
+        </decrease>
+    </indentation>
+    
+    <tree-sitter language="capnp">
+        <folds />
+        <highlights />
+        <injections />
+        <symbols />
+    </tree-sitter>
+</syntax>
