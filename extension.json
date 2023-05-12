@@ -3,7 +3,7 @@
     "name": "Cap'n Proto",
     "organization": "Honeypot.net",
     "description": "Syntax highlighting for Cap'n Proto files.",
-    "version": "0.1",
+    "version": "0.2",
     "categories": ["languages"],
     "homepage": "https://github.com/kstrauser/nova-capnproto",
     "bugs": "https://github.com/kstrauser/nova-capnproto/issues"

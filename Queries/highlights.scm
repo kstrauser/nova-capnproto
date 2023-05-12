@@ -3,7 +3,7 @@
 [
   (unique_id)
   (top_level_annotation_body)
-] @preproc
+] @processing
 
 ; Includes
 
@@ -12,9 +12,9 @@
   "$import"
   "embed"
   "using"
-] @include
+] @processing
 
-(import_path) @string @text.uri
+(import_path) @string
 
 ; Keywords
 
@@ -33,44 +33,44 @@
 
 [
   "const"
-] @type.qualifier
+] @identifier.qualifier
 
 [
   (primitive_type)
   "List"
-] @type.builtin
+] @identifier.type
 
 ; Typedefs
 
-(type_definition) @type.definition
+(type_definition) @definition.type
 
 ; Labels (@number, @number!)
 
-(field_version) @label
+(field_version) @identifier.constant
 
 ; Methods
 
 [
   (annotation_definition_identifier)
   (method_identifier)
-] @method
+] @definition.method
 
 ; Fields
 
-(field_identifier) @field
+(field_identifier) @identifier.key
 
 ; Properties
 
-(property) @property
+(property) @identifier.property
 
 ; Parameters
 
 [
   (param_identifier)
   (return_identifier)
-] @parameter
+] @identifier.argument
 
-(annotation_target) @parameter.builtin
+(annotation_target) @identifier.method
 
 ; Constants
 
@@ -78,9 +78,9 @@
   (const_identifier)
   (local_const)
   (enum_member)
-] @constant
+] @identifier.constant
 
-(void) @constant.builtin
+(void) @value.null
 
 ; Types
 
@@ -88,14 +88,14 @@
   (enum_identifier)
   (extend_type)
   (type_identifier)
-] @type
+] @identifier.type
 
 ; Attributes
 
 [
   (annotation_identifier)
   (attribute)
-] @attribute
+] @identifier.property
 
 ; Operators
 
@@ -110,19 +110,19 @@
   (namespace)
 ] @string
 
-(namespace) @text.underline
+(namespace) @string
 
-(escape_sequence) @string.escape
+(escape_sequence) @value.entity
 
-(data_string) @string.special
+(data_string) @string
 
-(number) @number
+(number) @value.number
 
-(float) @float
+(float) @value.number
 
-(boolean) @boolean
+(boolean) @value.boolean
 
-(data_hex) @symbol
+(data_hex) @value.entity
 
 ; Punctuation
 
@@ -130,24 +130,24 @@
   "*"
   "$"
   ":"
-] @punctuation.special
+] @string
 
-["{" "}"] @punctuation.bracket
+["{" "}"] @bracket
 
-["(" ")"] @punctuation.bracket
+["(" ")"] @bracket
 
-["[" "]"] @punctuation.bracket
+["[" "]"] @bracket
 
 [
   ","
   ";"
   "->"
-] @punctuation.delimiter
+] @string
 
 ; Comments
 
-(comment) @comment @spell
+(comment) @comment
 
 ; Errors
 
-(ERROR) @error
+(ERROR) @invalid
